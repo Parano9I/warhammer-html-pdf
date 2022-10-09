@@ -1,0 +1,173 @@
+{
+    "factionName": "Death - Soulblight Gravelords",
+    "factionImg": "factions-death-soulblight-gravelords.svg",
+    "factionPTS": "885pts",
+    "heroName": "Prince Duvalle",
+    "heroImg": "",
+    "heroPTS": "205pts",
+    "champions": [
+        {
+            "name": "Kosargi Nightguard",
+            "img": "",
+            "pts": "170pts",
+            "weapons": [
+                {
+                    "name": "Dagger"
+                }
+            ]
+        },
+        {
+            "name": "Kosargi Nightguard",
+            "img": "",
+            "pts": "170pts",
+            "weapons": [
+                {
+                    "name": "Dagger"
+                }
+            ]
+        },
+        {
+            "name": "Skeleton Warrior with Ancient Spear",
+            "img": "",
+            "pts": "50pts",
+            "weapons": [
+                {
+                    "name": "Ancient Spear"
+                },
+                {
+                    "name": "Dagger"
+                }
+            ]
+        },
+        {
+            "name": "Skeleton Warrior with Ancient Spear",
+            "img": "",
+            "pts": "50pts",
+            "weapons": [
+                {
+                    "name": "Ancient Spear"
+                },
+                {
+                    "name": "Dagger"
+                }
+            ]
+        },
+        {
+            "name": "Vyrkos Blood-born",
+            "img": "",
+            "pts": "120pts",
+            "weapons": [
+                {
+                    "name": "Dagger"
+                }
+            ]
+        },
+        {
+            "name": "Vyrkos Blood-born",
+            "img": "",
+            "pts": "120pts",
+            "weapons": [
+                {
+                    "name": "Dagger"
+                }
+            ]
+        }
+    ],
+    "forceRules": {
+        "Universal Reactions": [
+            {
+                "name": "[Reaction] Counter:",
+                "imgs": [],
+                "text": "fighter can make this reaction after they are targeted by a melee attack action but before the hit rolls are made.  For each hit roll from that attack action that misses, allocate 1 damage point to the attacking fighter.  For each hit roll of 1, allocate 2 damage points to the attacking fighter instead."
+            },
+            {
+                "name": "[Reaction] Strike Them Down:",
+                "imgs": [],
+                "text": "fighter can make this reaction when a visible enemy fighter within 1\" of them makes a disengage action but before that fighter moves away.  Roll a dice.  On a 4+, allocate D6 damage points to that enemy fighter."
+            },
+            {
+                "name": "[Reaction] Take Cover:",
+                "imgs": [],
+                "text": "fighter that is in cover can make this reaction after they are targeted by a missile attack action but before the hit rolls are made.  After the hit rolls have been made, roll a dice for each critical hit.  On a 4+, that critical hit becomes a hit instead.  Fighters with the Mount runemark cannot make this reaction."
+            }
+        ],
+        "Universal Abilties": [
+            {
+                "name": "⚁ [Double] Onslaught:",
+                "imgs": [],
+                "text": "Add 1 to the Attacks characteristic of melee attack actions made by this fighter until the end of their activation."
+            },
+            {
+                "name": "⚁ [Double] Rush:",
+                "imgs": [],
+                "text": "Add 1 to the Move characteristic of this fighter until the end of their activation."
+            },
+            {
+                "name": "⚂ [Triple] Inspiring Presence:",
+                "imgs": [],
+                "text": "Pick a visible friendly fighter within 6\" of this fighter that has not activated yet this battle round.  You can activate that fighter immediately after this fighter's activation ends."
+            },
+            {
+                "name": "⚂ [Triple] Respite:",
+                "imgs": [],
+                "text": "A fighter cannot use this ability if they are within 1\" of any enemy fighters. Remove a number of damage points allocated to this fighter equal to the value of this ability."
+            },
+            {
+                "name": "⚃ [Quad] Rampage:",
+                "imgs": [],
+                "text": "This fighter can make a bonus move action. Then, they can make a bonus attack action."
+            }
+        ]
+    },
+    "selectionRules": [
+        {
+            "name": "[Reaction] Unfeeling Flesh :",
+            "imgs": [
+                "factions-death-soulblight-gravelords.svg"
+            ],
+            "text": "fighter can make this reaction when they are targeted by a melee attack action but before the hit rolls are made.  Subtract 1 from the damage points allocated to this fighter by each hit from that attack action (to a minimum of 1)."
+        },
+        {
+            "name": "⚁ [Double] Fiendish Lure :",
+            "imgs": [
+                "factions-death-soulblight-gravelords.svg",
+                "bladeborn-crimsoncourt.svg",
+                "fighters-leader.svg"
+            ],
+            "text": "Until the end of the battle round, add 1 to the damage points allocated by each critical hit from attack actions made by friendly fighters that target an enemy fighter within 6\" of this fighter."
+        },
+        {
+            "name": "⚁ [Double] The Thrill of the Hunt :",
+            "imgs": [
+                "factions-death-soulblight-gravelords.svg",
+                "bladeborn-crimsoncourt.svg"
+            ],
+            "text": "If the next attack action made by this fighter this activation targets an enemy fighter with any damage points allocated to them, add 1 to the Attacks and Strength characteristics of that attack action."
+        },
+        {
+            "name": "⚂ [Triple] Call the Crimson Feast :",
+            "imgs": [
+                "factions-death-soulblight-gravelords.svg",
+                "fighters-leader.svg",
+                "fighters-terrifying.svg"
+            ],
+            "text": "Until the end of the battle round, add 1 to the Attacks characteristic of melee attack actions made by visible friendly fighters while they are within 6\" of this fighter."
+        },
+        {
+            "name": "⚂ [Triple] Summon Undead Minions :",
+            "imgs": [
+                "factions-death-soulblight-gravelords.svg",
+                "fighters-leader.svg"
+            ],
+            "text": "Pick a friendly fighter with the Soulblight Gravelords faction runemark and the Minion runemark that has been taken down. Set up that fighter up on a platform or the battlefield floor, wholly within 3\" of this fighter. That fighter no longer counts as being taken down and has no damage points allocated to it."
+        },
+        {
+            "name": "⚂ [Triple] Thirst for Blood :",
+            "imgs": [
+                "factions-death-soulblight-gravelords.svg",
+                "fighters-terrifying.svg"
+            ],
+            "text": "A fighter can only use this ability if an enemy fighter has been taken down by an attack action made by this fighter this activation. Remove a number of damage points allocated to this fighter up to double the value of this ability."
+        }
+    ]
+}
