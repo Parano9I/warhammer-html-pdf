@@ -1,9 +1,8 @@
-import CompanionTemplate from "./FighterTemplate.js";
-import rulesParcer from "../../helpers/parse/rulesParcer.js";
-import imgMaps from "../../assets/imgMaps.js";
-import getImgNameByKey from "../../helpers/getImgNameByKey.js";
+const CompanionTemplate = require("./FighterTemplate.js");
+const rulesParcer  = require("../../helpers/parse/rulesParcer.js");
+const getImgNameByKey = require("../../helpers/getImgNameByKey.js");
 
-export default (data) => {
+module.exports = (data) => {
     const factionData = data.querySelector('.force>h2').text;
     const factionName = /\(([^}]*)\)/.exec(factionData)[1];
     const factionPTS = /\[([^}]*)\]/.exec(factionData)[1];

@@ -1,6 +1,6 @@
-import imgMaps from "../assets/imgMaps.js";
+const imgMaps = require("../assets/imgMaps.js");
 
-export default (key) => {
+module.exports = (key) => {
     return imgMaps.find((item) => {
         return item.value?.trim() === key.trim();
     })?.fileName;

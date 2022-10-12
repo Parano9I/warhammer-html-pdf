@@ -1,6 +1,6 @@
-import RuleTemplate from "../../Templates/JSON/RuleTemplate.js";
+const RuleTemplate = require("../../Templates/JSON/RuleTemplate.js");
 
-export default (rules) => {
+module.exports = (rules) => {
 
     // const regExpGroup = /\- [^}]*\ -|\[-[^}]*\-]/;
     const regExpGroup = /\[-(.*?)\-]|\- (.*?)\ -/;

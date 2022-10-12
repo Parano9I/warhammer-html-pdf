@@ -1,6 +1,6 @@
-import getImgNameByKey from "../../helpers/getImgNameByKey.js";
+const getImgNameByKey = require("../../helpers/getImgNameByKey.js");
 
-export default (data) => {
+module.exports = (data) => {
     const fullName = data.querySelector('.bold').text.trim().trimEnd(':');
     const text = data.text.replace(/\[([^}]*)\:/, '').trim();
 
