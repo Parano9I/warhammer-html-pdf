@@ -128,7 +128,7 @@ module.exports = [
 		fileName: 'bladeborn-zarbag.svg',
 	},
 	{
-		value: 'Beasts  of Chaos',
+		value: 'Beasts of Chaos',
 		fileName: 'factions-chaos-beasts-of-chaos.svg',
 	},
 	{
@@ -152,7 +152,7 @@ module.exports = [
 		fileName: 'factions-chaos-everchosen.svg',
 	},
 	{
-		value: 'Horns  of Hashut',
+		value: 'Horns of Hashut',
 		fileName: 'factions-chaos-horns-of-hashut.svg',
 	},
 	{
@@ -180,7 +180,7 @@ module.exports = [
 		fileName: 'factions-chaos-rotmire-creed.svg',
 	},
 	{
-		value: 'Scions  of The Flame',
+		value: 'Scions of the Flame',
 		fileName: 'factions-chaos-scions-of-the-flame.svg',
 	},
 	{
@@ -196,7 +196,7 @@ module.exports = [
 		fileName: 'factions-chaos-slaanesh-sybarites.svg',
 	},
 	{
-		value: 'Slaves To Darkness',
+		value: 'Slaves to Darkness',
 		fileName: 'factions-chaos-slaves-to-darkness.svg',
 	},
 	{
@@ -232,7 +232,7 @@ module.exports = [
 		fileName: 'factions-death-flesh-eater-courts.svg',
 	},
 	{
-		value: 'Legions  of Nagash',
+		value: 'Legions of Nagash',
 		fileName: 'factions-death-legions-of-nagash.svg',
 	},
 	{
@@ -268,43 +268,43 @@ module.exports = [
 		fileName: 'factions-destruction-ogor-mawtribes.svg',
 	},
 	{
-		value: 'Cities  of Sigmar',
+		value: 'Cities of Sigmar',
 		fileName: 'factions-order-cities-of-sigmar.svg',
 	},
 	{
-		value: 'Cities  of Sigmar Alternative',
+		value: 'Cities of Sigmar Alternative',
 		fileName: 'factions-order-cities-of-sigmar-alternative.svg',
 	},
 	{
-		value: 'Cities  of Sigmar Anvilgard',
+		value: 'Cities of Sigmar Anvilgard',
 		fileName: 'factions-order-cities-of-sigmar-anvilgard.svg',
 	},
 	{
-		value: 'Cities  of Sigmar Greywater Fastness',
+		value: 'Cities of Sigmar Greywater Fastness',
 		fileName: 'factions-order-cities-of-sigmar-greywater-fastness.svg',
 	},
 	{
-		value: 'Cities  of Sigmar Hallowheart',
+		value: 'Cities of Sigmar Hallowheart',
 		fileName: 'factions-order-cities-of-sigmar-hallowheart.svg',
 	},
 	{
-		value: 'Cities  of Sigmar Hammerhal',
+		value: 'Cities of Sigmar Hammerhal',
 		fileName: 'factions-order-cities-of-sigmar-hammerhal.svg',
 	},
 	{
-		value: 'Cities  of Sigmar Tempests Eye',
+		value: 'Cities of Sigmar Tempests Eye',
 		fileName: 'factions-order-cities-of-sigmar-tempests-eye.svg',
 	},
 	{
-		value: 'Cities  of Sigmar The Living City',
+		value: 'Cities of Sigmar The Living City',
 		fileName: 'factions-order-cities-of-sigmar-the-living-city.svg',
 	},
 	{
-		value: 'Cities  of Sigmar The Phoenicium',
+		value: 'Cities of Sigmar The Phoenicium',
 		fileName: 'factions-order-cities-of-sigmar-the-phoenicium.svg',
 	},
 	{
-		value: 'Daughters  of Khaine',
+		value: 'Daughters of Khaine',
 		fileName: 'factions-order-daughters-of-khaine.svg',
 	},
 	{
@@ -324,9 +324,13 @@ module.exports = [
 		fileName: 'factions-order-kharadron-overlords.svg',
 	},
 	{
-		value: 'Lumineth Realmlords',
+		value: 'Lumineth Realm-lords',
 		fileName: 'factions-order-lumineth-realmlords.svg',
 	},
+  {
+    value: 'Lumineth Realmlords',
+    fileName: 'factions-order-lumineth-realmlords.svg',
+  },
 	{
 		value: 'Seraphon',
 		fileName: 'factions-order-seraphon.svg',
@@ -487,4 +491,52 @@ module.exports = [
 		value: 'Monsters of Order',
 		fileName: 'monsters-of-order.svg',
 	},
+  {
+    value: 'Alternative',
+    fileName: 'factions-order-cities-of-sigmar-alternative.svg'
+  },
+  {
+    value: 'Anvilgard',
+    fileName: 'factions-order-cities-of-sigmar-anvilgard.svg'
+  },
+  {
+    value: 'Greywater Fastness',
+    fileName: 'factions-order-cities-of-sigmar-greywater-fastness.svg'
+  },
+  {
+    value: 'Hallowheart',
+    fileName: 'factions-order-cities-of-sigmar-hallowheart.svg'
+  },
+  {
+    value: 'Hammerhal',
+    fileName: 'factions-order-cities-of-sigmar-hammerhal.svg'
+  },
+  {
+    value: 'Tempests Eye',
+    fileName: 'factions-order-cities-of-sigmar-tempests-eye.svg'
+  },
+  {
+    value: 'The Living City',
+    fileName: 'factions-order-cities-of-sigmar-the-living-city.svg'
+  },
+  {
+    value: 'The Phoenicium',
+    fileName: 'factions-order-cities-of-sigmar-the-phoenicium.svg'
+  },
+  {
+    value: 'Sacrosanct Chamber',
+    fileName: 'factions-order-stormcast-eternals-sacrosanct.svg'
+  },
+  {
+    value: 'Thunderstrike Stormcasts',
+    fileName: 'factions-order-stormcast-eternals-thunderstrike.svg'
+  },
+  {
+    value: 'Vanguard Chamber',
+    fileName: 'factions-order-stormcast-eternals-vanguard.svg'
+  },
+  {
+    value: 'Warrior Chamber',
+    fileName: 'factions-order-stormcast-eternals-warrior.svg'
+  },
 ];

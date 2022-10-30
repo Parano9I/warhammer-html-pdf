@@ -1,34 +1,36 @@
-const CompanionTemplate = require("./FighterTemplate.js");
-const rulesParcer  = require("../../helpers/parse/rulesParcer.js");
-const getImgNameByKey = require("../../helpers/getImgNameByKey.js");
+const CompanionTemplate = require('./FighterTemplate.js')
+const HeroTemplate = require('./HeroTemplate.js')
+const getImgNameByKey = require('../../helpers/getImgNameByKey.js')
+const getPTSFromStr = require('../../helpers/getPTSFromStr.js')
+const getNameFromStr = require('../../helpers/getNameFromStr.js')
+const getRulesGroup = require('../../helpers/parse/getRulesGroup.js')
+const groupFightersByName = require('../../helpers/groupFightersByName.js')
 
 module.exports = (data) => {
-    const factionData = data.querySelector('.force>h2').text;
-    const factionName = /\(([^}]*)\)/.exec(factionData)[1];
-    const factionPTS = /\[([^}]*)\]/.exec(factionData)[1];
+  const factionData = data.querySelector('.force>h2').text
+  const factionName = getNameFromStr(factionData)
+  const factionPTS = getPTSFromStr(factionData)
+  const removedRaceFromTitle = factionName.split(' - ').at(-1).trim()
 
-    const heroData = data.querySelectorAll('.force>ul>.category');
+  const personsNode = data.querySelectorAll('.category');
+  const heroesNode = personsNode[0].querySelectorAll('.rootselection');
 
-    const heroMainData = heroData[0].querySelector('.rootselection>h4').text;
-    const heroName = heroMainData.replace(/\[[^}]*\]/, '').trim();
-    const heroPTS = /\[([^}]*)\]/.exec(heroMainData)[1];
+  const leaderNode = heroesNode[0]
+  const commonHeroesNode = heroesNode.slice(1) ?? []
 
-    const fightersData = heroData[1].querySelectorAll('.rootselection');
+  const fightersData = personsNode[1].querySelectorAll('.rootselection')
 
-    const summary = data.querySelectorAll('.summary');
+  const summaries = data.querySelectorAll('.summary')
 
-    const forceRules = summary[1].querySelectorAll('p');
-    const selectionRules = summary[2].querySelectorAll('p');
-
-    return {
-        factionName,
-        factionImg: getImgNameByKey('Soulblight Gravelords') ?? '',
-        factionPTS,
-        heroName,
-        heroImg: getImgNameByKey(heroName) ?? '',
-        heroPTS,
-        champions:  fightersData.map(fighterData => CompanionTemplate(fighterData)),
-        forceRules: rulesParcer(forceRules),
-        selectionRules: rulesParcer(selectionRules),
-    }
+  return {
+    factionName,
+    factionImg: getImgNameByKey(removedRaceFromTitle) ?? '',
+    removedRaceFromTitle,
+    factionPTS,
+    leader: HeroTemplate(leaderNode),
+    commonHeroes: commonHeroesNode.map(item => HeroTemplate(item)),
+    champions: groupFightersByName(fightersData),
+    forceRules: getRulesGroup('Force Rules', summaries),
+    selectionRules: getRulesGroup('Selection Rules', summaries),
+  }
 }
