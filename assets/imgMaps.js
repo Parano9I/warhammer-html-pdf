@@ -164,6 +164,10 @@ module.exports = [
 		fileName: 'factions-chaos-khorne-bloodbound.svg',
 	},
 	{
+		value: 'Bloodbound',
+		fileName: 'factions-chaos-khorne-bloodbound.svg',
+	},
+	{
 		value: 'Khorne Daemons',
 		fileName: 'factions-chaos-khorne-daemons.svg',
 	},
@@ -195,6 +199,10 @@ module.exports = [
 		value: 'Slaanesh Sybarites',
 		fileName: 'factions-chaos-slaanesh-sybarites.svg',
 	},
+		{
+		value: 'Sybarites',
+		fileName: 'factions-chaos-slaanesh-sybarites.svg',
+	},
 	{
 		value: 'Slaves to Darkness',
 		fileName: 'factions-chaos-slaves-to-darkness.svg',
@@ -216,6 +224,10 @@ module.exports = [
 		fileName: 'factions-chaos-the-unmade.svg',
 	},
 	{
+		value: 'Arcanites',
+		fileName: 'factions-chaos-tzeentch-arcanites.svg',
+	},
+	{
 		value: 'Tzeentch Arcanites',
 		fileName: 'factions-chaos-tzeentch-arcanites.svg',
 	},
@@ -228,7 +240,7 @@ module.exports = [
 		fileName: 'factions-chaos-untamed-beasts.svg',
 	},
 	{
-		value: 'Flesh Eater Courts',
+		value: 'Flesh-eater Courts',
 		fileName: 'factions-death-flesh-eater-courts.svg',
 	},
 	{
