@@ -168,97 +168,6 @@
         margin-right: 5px;
     }
 
-    /*.fighters {*/
-    /*    padding: 0 14px;*/
-    /*}*/
-
-    /*.fighters__title {*/
-    /*    font-size: 20px;*/
-    /*    margin-bottom: 8px;*/
-    /*    text-align: center;*/
-    /*}*/
-
-    /*.fighter {*/
-    /*    border-bottom: #181818 solid 2px;*/
-    /*    background-repeat: no-repeat;*/
-    /*    background-position: 10px;*/
-    /*}*/
-
-    /*.fighter:not(:last-child) {*/
-    /*    margin-bottom: 10px;*/
-    /*}*/
-
-    /*.fighter__top-content {*/
-    /*    display: flex;*/
-    /*    padding-bottom: 2px;*/
-    /*    flex-direction: row;*/
-    /*    justify-content: space-between;*/
-    /*}*/
-
-    /*.fighter__name {*/
-    /*    font-size: 15px;*/
-    /*}*/
-
-    /*.fighter__pts {*/
-    /*    font-size: 15px;*/
-    /*}*/
-
-    /*.fighter__left {*/
-    /*    display: flex;*/
-    /*}*/
-
-    /*.fighter__img {*/
-    /*    height: 15px;*/
-    /*    width: 15px;*/
-    /*    margin-right: 5px;*/
-    /*}*/
-
-    /*.heroes {*/
-    /*    padding: 0 15px;*/
-    /*    margin-bottom: 10px;*/
-    /*}*/
-
-    /*.heroes__title {*/
-    /*    font-size: 20px;*/
-    /*    margin-bottom: 8px;*/
-    /*    text-align: center;*/
-    /*}*/
-
-    /*.hero {*/
-    /*    display: flex;*/
-    /*    align-items: center;*/
-    /*    min-height: 40px;*/
-    /*    background-repeat: no-repeat;*/
-    /*    background-position: 10px;*/
-    /*}*/
-
-    /*.hero:not(:last-child) {*/
-    /*    margin-bottom: 10px;*/
-    /*}*/
-
-    /*.hero__top-content {*/
-    /*    display: flex;*/
-    /*    width: 100%;*/
-    /*    flex-direction: row;*/
-    /*    justify-content: space-between;*/
-    /*}*/
-
-    /*.hero__name {*/
-    /*    font-size: 18px;*/
-    /*}*/
-
-    /*.hero__pts {*/
-    /*    font-size: 20px;*/
-    /*}*/
-
-    /*.weapons {*/
-    /*    display: flex;*/
-    /*}*/
-
-    /*.weapons__weapon:not(:last-child) {*/
-    /*    margin-right: 8px;*/
-    /*}*/
-
     .rules {
         padding: 5px 10px;
     }
@@ -267,22 +176,9 @@
         position: relative;
         display: flex;
         min-height: 25px;
-        font-size: 11px;
-    }
-
-    .rule--mini {
-        position: relative;
-        display: flex;
-        min-height: 25px;
-        font-size: 8px;
     }
 
     .rule:not(:last-child) {
-        border-bottom: #181818 solid 1px;
-        /*margin-bottom: 2px;*/
-    }
-
-    .rule--mini:not(:last-child) {
         border-bottom: #181818 solid 1px;
         /*margin-bottom: 2px;*/
     }
@@ -412,7 +308,7 @@
                 <ul class="rules__list">
                     <% data.selectionRules.forEach(function(rule){ %>
                         <li
-                        <% if(data.selectionRules.length > 8) { %>
+                        <% if(data.selectionRules.length > 30) { %>
                             class="rules__item rule--mini"
                             style="padding-left: 60px"
                         <% } else { %>
@@ -421,7 +317,7 @@
                                 <% } %>
                         >
                             <% rule.imgs.forEach(function(img, idx){ %>
-                                <% if(data.selectionRules.length > 8) { %>
+                                <% if(data.selectionRules.length > 30) { %>
                                     <img
                                             class="rule__img--mini"
                                             src="../images/<%= img %>"
@@ -436,10 +332,10 @@
                                 <% } %>
                             <% }) %>
                             <div class="rule__content">
-                                <h3 class="rule__name">
+                                <h3 class="rule__name" style="font-size: <%= data.ruleContainerFontSize %>px">
                                     <%= rule.name %>
                                 </h3>
-                                <p class="rule__text">
+                                <p class="rule__text" style="font-size: <%= data.ruleContainerFontSize %>px">
                                     <%= rule.text %>
                                 </p>
                             </div>

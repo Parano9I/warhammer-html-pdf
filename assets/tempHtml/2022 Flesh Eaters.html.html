@@ -1,0 +1,608 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!--    <link href="http://fonts.cdnfonts.com/css/whitestone" rel="stylesheet">-->
+    <title>Document</title>
+</head>
+<style>
+    @font-face {
+        font-family: 'Whitestone';
+        font-style: normal;
+        font-weight: 400;
+        src: local('Whitestone'), url('https://fonts.cdnfonts.com/s/71471/Whitestone.woff') format('woff');
+    }
+
+    @font-face {
+        font-family: 'Whitestone';
+        font-style: italic;
+        font-weight: 400;
+        src: local('Whitestone'), url('https://fonts.cdnfonts.com/s/71471/Whitestone Italic.woff') format('woff');
+    }
+
+    @font-face {
+        font-family: 'Whitestone';
+        font-style: normal;
+        font-weight: 700;
+        src: local('Whitestone'), url('https://fonts.cdnfonts.com/s/71471/Whitestone Bold.woff') format('woff');
+    }
+
+    @font-face {
+        font-family: 'Whitestone';
+        font-style: italic;
+        font-weight: 700;
+        src: local('Whitestone'), url('https://fonts.cdnfonts.com/s/71471/Whitestone Bold Italic.woff') format('woff');
+    }
+
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+
+    ul {
+        list-style: none;
+    }
+
+    .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        font-family: 'Whitestone', sans-serif;
+        font-size: 12px;
+    }
+
+    .card--front {
+        height: 148mm;
+        width: 106mm;
+        transform: rotate(90deg);
+        border: #181818 solid 2px;
+        background-image: url("../images/background-card-img.jpg");
+    }
+
+    .card--back {
+        width: 148mm;
+        height: 106mm;
+        border: #181818 solid 2px;
+        background-image: url("../images/background-card-img.jpg");
+    }
+
+    .card__header {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        min-height: 60px;
+        padding: 14px;
+        margin-bottom: 10px;
+        background-image: url("../images/background-header-img.png");
+        background-repeat: no-repeat;
+    }
+
+    .card__header--mini {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        min-height: 35px;
+        padding: 5px;
+        background-image: url("../images/background-header-img.png");
+        background-size: 100% 250px;
+        background-repeat: no-repeat;
+    }
+
+    .faction {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .faction__name {
+        font-size: 16px;
+    }
+
+    .faction__img {
+        color: #181818;
+        fill: #181818;
+        margin-right: 10px;
+    }
+
+    .faction__name--mini {
+        font-size: 14px;
+    }
+
+    .faction__img--mini {
+        color: #181818;
+        fill: #181818;
+        width: 20px;
+        height: 20px;
+        margin-right: 10px;
+    }
+
+    .persons-section {
+        padding: 0 14px;
+    }
+
+    .persons-section__title {
+        font-size: 20px;
+        margin-bottom: 8px;
+        text-align: center;
+    }
+
+    .person {
+        border-bottom: #181818 solid 2px;
+        background-repeat: no-repeat;
+        background-position: 10px;
+    }
+
+    .person:not(:last-child) {
+        margin-bottom: 10px;
+    }
+
+    .person__top-content {
+        display: flex;
+        padding-bottom: 2px;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .person__name {
+        font-size: 15px;
+    }
+
+    .person__pts {
+        font-size: 15px;
+    }
+
+    .person__left {
+        display: flex;
+    }
+
+    .person__img {
+        height: 15px;
+        width: 15px;
+        margin-right: 5px;
+    }
+
+    .rules {
+        padding: 5px 10px;
+    }
+
+    .rule {
+        position: relative;
+        display: flex;
+        min-height: 25px;
+    }
+
+    .rule:not(:last-child) {
+        border-bottom: #181818 solid 1px;
+        /*margin-bottom: 2px;*/
+    }
+
+    .rule__name {
+        display: inline;
+    }
+
+    .rule__text {
+        display: inline;
+    }
+
+    .rule__img {
+        position: absolute;
+        color: #181818;
+        fill: #181818;
+        width: 25px;
+        height: 25px;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    .rule__img--mini {
+        position: absolute;
+        color: #181818;
+        fill: #181818;
+        width: 15px;
+        height: 15px;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+</style>
+<body>
+<div class="container">
+    <div class="card--front">
+        <header class="card__header">
+            <div class="faction">
+                <img class="faction__img" src="../images/factions-death-flesh-eater-courts.svg">
+                <h1 class="faction__name">Death - Flesh-eater Courts [995pts]</h1>
+            </div>
+        </header>
+        <section class="persons-section">
+            <h2 class="persons-section__title">Leader</h2>
+            <ul class="persons-section__list">
+                <li class="persons-section__item person">
+                    <div class="person__top-content">
+                        <div class="person__left">
+                            
+                                
+                                    <img class="person__img" src="../images/factions-death-flesh-eater-courts.svg"
+                                         style="left: 0px">
+                                
+                            
+                                
+                                    <img class="person__img" src="../images/fighters-leader.svg"
+                                         style="left: 30px">
+                                
+                            
+                                
+                            
+                                
+                            
+                            <h3 class="person__name">
+                                Crypt Ghast Courtier
+                                
+                            </h3>
+                        </div>
+                        <span class="person__pts">135pts</span>
+                    </div>
+                </li>
+            </ul>
+        </section>
+        
+            <section class="persons-section">
+                <h2 class="persons-section__title">Heroes</h2>
+                <ul class="persons-section__list">
+                    
+                        <li class="persons-section__item person">
+                            <div class="person__top-content">
+                                <div class="person__left">
+                                    
+                                        
+                                            <img class="person__img" src="../images/factions-death-flesh-eater-courts.svg"
+                                                 style="left: 0px">
+                                        
+                                    
+                                        
+                                            <img class="person__img" src="../images/fighters-fly.svg"
+                                                 style="left: 30px">
+                                        
+                                    
+                                        
+                                            <img class="person__img" src="../images/fighters-leader.svg"
+                                                 style="left: 60px">
+                                        
+                                    
+                                        
+                                            <img class="person__img" src="../images/fighters-agile.svg"
+                                                 style="left: 90px">
+                                        
+                                    
+                                        
+                                    
+                                        
+                                    
+                                    <h3 class="person__name">
+                                        Crypt Infernal
+                                        
+                                    </h3>
+                                </div>
+                                <span class="person__pts">275pts</span>
+                            </div>
+                        </li>
+                    
+                </ul>
+            </section>
+        
+        
+            <section class="persons-section">
+                <h2 class="persons-section__title">Fighters</h2>
+                <ul class="persons-section__list">
+                    
+                        <li class="persons-section__item person">
+                            <div class="person__top-content">
+                                <div class="person__left">
+                                    
+                                        
+                                    
+                                        
+                                            <img class="person__img" src="../images/factions-death-flesh-eater-courts.svg"
+                                                 style="left: 30px">
+                                        
+                                    
+                                        
+                                            <img class="person__img" src="../images/fighters-agile.svg"
+                                                 style="left: 60px">
+                                        
+                                    
+                                        
+                                            <img class="person__img" src="../images/fighters-fly.svg"
+                                                 style="left: 90px">
+                                        
+                                    
+                                    <h3 class="person__name">
+                                        Crypt Flayer
+                                        
+                                    </h3>
+                                </div>
+                                <span class="person__pts">235pts</span>
+                            </div>
+                        </li>
+                    
+                        <li class="persons-section__item person">
+                            <div class="person__top-content">
+                                <div class="person__left">
+                                    
+                                        
+                                    
+                                        
+                                            <img class="person__img" src="../images/factions-death-flesh-eater-courts.svg"
+                                                 style="left: 30px">
+                                        
+                                    
+                                    <h3 class="person__name">
+                                        Crypt Ghoul
+                                         x3
+                                    </h3>
+                                </div>
+                                <span class="person__pts">55pts</span>
+                            </div>
+                        </li>
+                    
+                        <li class="persons-section__item person">
+                            <div class="person__top-content">
+                                <div class="person__left">
+                                    
+                                        
+                                    
+                                        
+                                            <img class="person__img" src="../images/factions-death-flesh-eater-courts.svg"
+                                                 style="left: 30px">
+                                        
+                                    
+                                        
+                                            <img class="person__img" src="../images/fighters-elite.svg"
+                                                 style="left: 60px">
+                                        
+                                    
+                                    <h3 class="person__name">
+                                        Crypt Horror
+                                        
+                                    </h3>
+                                </div>
+                                <span class="person__pts">185pts</span>
+                            </div>
+                        </li>
+                    
+                </ul>
+            </section>
+        
+    </div>
+    
+        <div class="card--back">
+            <header class="card__header--mini">
+                <div class="faction">
+                    <img class="faction__img--mini" src="../images/factions-death-flesh-eater-courts.svg">
+                    <h1 class="faction__name--mini">Death - Flesh-eater Courts [995pts]</h1>
+                </div>
+            </header>
+            <div class="rules">
+                <h2>Selection Rules</h2>
+                <ul class="rules__list">
+                    
+                        <li
+                        
+                            class="rules__item rule"
+                            style="padding-left: 90px"
+                                
+                        >
+                            
+                                
+                                    <img
+                                            class="rule__img"
+                                            src="../images/factions-death-flesh-eater-courts.svg"
+                                            style="left: 0px"
+                                    >
+                                
+                            
+                            <div class="rule__content">
+                                <h3 class="rule__name" style="font-size: 10px">
+                                    [Reaction] Baffling Parlay :
+                                </h3>
+                                <p class="rule__text" style="font-size: 10px">
+                                    fighter can make this reaction after they are targeted by a melee attack action but before the hit rolls are made.  Subtract 1 from the Attacks characteristic of that attack action, to a minimum of 1.
+                                </p>
+                            </div>
+                        </li>
+                    
+                        <li
+                        
+                            class="rules__item rule"
+                            style="padding-left: 90px"
+                                
+                        >
+                            
+                                
+                                    <img
+                                            class="rule__img"
+                                            src="../images/factions-death-flesh-eater-courts.svg"
+                                            style="left: 0px"
+                                    >
+                                
+                            
+                                
+                                    <img
+                                            class="rule__img"
+                                            src="../images/fighters-elite.svg"
+                                            style="left: 30px"
+                                    >
+                                
+                            
+                            <div class="rule__content">
+                                <h3 class="rule__name" style="font-size: 10px">
+                                    ⚁ [Double] Chosen of the King :
+                                </h3>
+                                <p class="rule__text" style="font-size: 10px">
+                                    A fighter can use this abiltiy only if they are within 6&#34; of a visible friendly fighter with the Flesh-eater Courts faction runemark and both the Hero and Berserker runemarks. Until the end of this fighter&#39;s activation, add 2 to the Attacks characteristic of melee attack actions made by this fighter.
+                                </p>
+                            </div>
+                        </li>
+                    
+                        <li
+                        
+                            class="rules__item rule"
+                            style="padding-left: 90px"
+                                
+                        >
+                            
+                                
+                                    <img
+                                            class="rule__img"
+                                            src="../images/factions-death-flesh-eater-courts.svg"
+                                            style="left: 0px"
+                                    >
+                                
+                            
+                            <div class="rule__content">
+                                <h3 class="rule__name" style="font-size: 10px">
+                                    ⚁ [Double] Feeding Frenzy :
+                                </h3>
+                                <p class="rule__text" style="font-size: 10px">
+                                    A fighter can only use this ability if an enemy fighter has been taken down by an attack action made by them this activation. Remove a number of damage points from this fighter up to the value of this ability.
+                                </p>
+                            </div>
+                        </li>
+                    
+                        <li
+                        
+                            class="rules__item rule"
+                            style="padding-left: 90px"
+                                
+                        >
+                            
+                                
+                                    <img
+                                            class="rule__img"
+                                            src="../images/factions-death-flesh-eater-courts.svg"
+                                            style="left: 0px"
+                                    >
+                                
+                            
+                                
+                                    <img
+                                            class="rule__img"
+                                            src="../images/fighters-agile.svg"
+                                            style="left: 30px"
+                                    >
+                                
+                            
+                            <div class="rule__content">
+                                <h3 class="rule__name" style="font-size: 10px">
+                                    ⚁ [Double] Skewering Strike :
+                                </h3>
+                                <p class="rule__text" style="font-size: 10px">
+                                    Add 1 to the Stregnth characteristic of the next melee attack action made by this fighter this activation. In addition, if that attack action scores a critical hit, until the end of the battle round, the target fighter cannot make move actions or disengage actions.
+                                </p>
+                            </div>
+                        </li>
+                    
+                        <li
+                        
+                            class="rules__item rule"
+                            style="padding-left: 90px"
+                                
+                        >
+                            
+                                
+                                    <img
+                                            class="rule__img"
+                                            src="../images/factions-death-flesh-eater-courts.svg"
+                                            style="left: 0px"
+                                    >
+                                
+                            
+                                
+                                    <img
+                                            class="rule__img"
+                                            src="../images/fighters-leader.svg"
+                                            style="left: 30px"
+                                    >
+                                
+                            
+                            <div class="rule__content">
+                                <h3 class="rule__name" style="font-size: 10px">
+                                    ⚂ [Triple] Bringer of Death :
+                                </h3>
+                                <p class="rule__text" style="font-size: 10px">
+                                    Until the end of the battle round, add the value of this ability (rounding up) to the Move characteristic of friendly fighters while they make a move action that starts within 6&#34; of this fighter.
+                                </p>
+                            </div>
+                        </li>
+                    
+                        <li
+                        
+                            class="rules__item rule"
+                            style="padding-left: 90px"
+                                
+                        >
+                            
+                                
+                                    <img
+                                            class="rule__img"
+                                            src="../images/factions-death-flesh-eater-courts.svg"
+                                            style="left: 0px"
+                                    >
+                                
+                            
+                                
+                                    <img
+                                            class="rule__img"
+                                            src="../images/fighters-agile.svg"
+                                            style="left: 30px"
+                                    >
+                                
+                            
+                            <div class="rule__content">
+                                <h3 class="rule__name" style="font-size: 10px">
+                                    ⚂ [Triple] Death Scream :
+                                </h3>
+                                <p class="rule__text" style="font-size: 10px">
+                                    Roll a dice for each visible enemy fighter within 8&#34; of this fighter. On a 5, allocate 1 damage point to the fighter being rolled for. On a 6, allocate a number of damage points to the fighter being rolled for equal to the value of this ability.
+                                </p>
+                            </div>
+                        </li>
+                    
+                        <li
+                        
+                            class="rules__item rule"
+                            style="padding-left: 90px"
+                                
+                        >
+                            
+                                
+                                    <img
+                                            class="rule__img"
+                                            src="../images/factions-death-flesh-eater-courts.svg"
+                                            style="left: 0px"
+                                    >
+                                
+                            
+                            <div class="rule__content">
+                                <h3 class="rule__name" style="font-size: 10px">
+                                    ⚃ [Quad] The Royal Hunt :
+                                </h3>
+                                <p class="rule__text" style="font-size: 10px">
+                                    This fighter makes a bonus move action. Then, they can make a bonus attack action. In addition, add 1 to the Attacks characteristic of that attack action if this fighter is within 1&#34; of a visible friendly fighter.
+                                </p>
+                            </div>
+                        </li>
+                    
+                </ul>
+            </div>
+        </div>
+    
+
+</body>
+</html>
