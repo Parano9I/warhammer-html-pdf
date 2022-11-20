@@ -47,7 +47,7 @@ fs.readdir(pathes.relative.html, async (err, files) => {
       await convertToPdf(fileName, page)
       await page.close()
 
-      fs.unlinkSync(pathToTempHtmlFile);
+      // fs.unlinkSync(pathToTempHtmlFile);
 
       console.log(fileName + '...Complete')
 
