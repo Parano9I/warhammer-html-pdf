@@ -114,11 +114,11 @@
     }
   </style>
   <body>
-    <% const heroes = [...data.commonHeroes, ...data.champions]; heroes.push(data.leader); %>
+    <% const heroes = [data.leader, ...data.commonHeroes, ...data.champions]; %>
 
     <div class="container">
       <div class="sheet">
-        <% const repeatOneCards = heroes.filter(item => item.repeats === 1) %> 
+        <% const repeatOneCards = heroes.filter(item => item.repeats === 1 || !item?.repeats) %> 
         <% if(repeatOneCards.length) { %>
         <div class="cards_group_container">
           <% repeatOneCards.forEach(function(hero){ %>
