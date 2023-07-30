@@ -1,0 +1,588 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!--    <link href="http://fonts.cdnfonts.com/css/whitestone" rel="stylesheet">-->
+    <title>Document</title>
+</head>
+<style>
+    @font-face {
+        font-family: 'Whitestone';
+        font-style: normal;
+        font-weight: 400;
+        src: local('Whitestone'), url('https://fonts.cdnfonts.com/s/71471/Whitestone.woff') format('woff');
+    }
+
+    @font-face {
+        font-family: 'Whitestone';
+        font-style: italic;
+        font-weight: 400;
+        src: local('Whitestone'), url('https://fonts.cdnfonts.com/s/71471/Whitestone Italic.woff') format('woff');
+    }
+
+    @font-face {
+        font-family: 'Whitestone';
+        font-style: normal;
+        font-weight: 700;
+        src: local('Whitestone'), url('https://fonts.cdnfonts.com/s/71471/Whitestone Bold.woff') format('woff');
+    }
+
+    @font-face {
+        font-family: 'Whitestone';
+        font-style: italic;
+        font-weight: 700;
+        src: local('Whitestone'), url('https://fonts.cdnfonts.com/s/71471/Whitestone Bold Italic.woff') format('woff');
+    }
+
+
+    @import url('https://fonts.cdnfonts.com/css/josefin-sans?styles=19769,19764');
+
+
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+
+    ul {
+        list-style: none;
+    }
+
+    .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        font-family: 'Whitestone', sans-serif;
+        font-size: 12px;
+    }
+
+    .card--front {
+        height: 148mm;
+        width: 106mm;
+        transform: rotate(90deg);
+        border: #181818 solid 2px;
+        background-image: url("../images/background-card-img.jpg");
+    }
+
+    .card--back {
+        width: 148mm;
+        height: 106mm;
+        border: #181818 solid 2px;
+        background-image: url("../images/background-card-img.jpg");
+    }
+
+    .card__header {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        min-height: 60px;
+        padding: 14px;
+        margin-bottom: 10px;
+        background-image: url("../images/background-header-img.png");
+        background-repeat: no-repeat;
+    }
+
+    .card__header--mini {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        min-height: 35px;
+        padding: 5px;
+        background-image: url("../images/background-header-img.png");
+        background-size: 100% 250px;
+        background-repeat: no-repeat;
+    }
+
+    .faction {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .faction__name {
+        font-size: 16px;
+    }
+
+    .faction__img {
+        color: #181818;
+        fill: #181818;
+        margin-right: 10px;
+    }
+
+    .faction__name--mini {
+        font-size: 14px;
+    }
+
+    .faction__img--mini {
+        color: #181818;
+        fill: #181818;
+        width: 20px;
+        height: 20px;
+        margin-right: 10px;
+    }
+
+    .persons-section {
+        padding: 0 14px;
+    }
+
+    .persons-section__title {
+        font-size: 20px;
+        margin-bottom: 8px;
+        text-align: center;
+    }
+
+    .person {
+        border-bottom: #181818 solid 2px;
+        background-repeat: no-repeat;
+        background-position: 10px;
+    }
+
+    .person:not(:last-child) {
+        margin-bottom: 10px;
+    }
+
+    .person__top-content {
+        display: flex;
+        padding-bottom: 2px;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .person__name {
+        font-size: 15px;
+    }
+
+    .person__pts {
+        font-size: 15px;
+    }
+
+    .person__left {
+        display: flex;
+    }
+
+    .person__img {
+        height: 15px;
+        width: 15px;
+        margin-right: 5px;
+    }
+
+    .rules {
+        padding: 5px 10px;
+    }
+
+    .rule {
+        position: relative;
+        display: flex;
+        min-height: 25px;
+    }
+
+    .rule:not(:last-child) {
+        border-bottom: #181818 solid 1px;
+        /*margin-bottom: 2px;*/
+    }
+
+    .rule__name {
+        display: inline;
+    }
+
+    .rule__text {
+        font-family: 'Josefin Sans', sans-serif;
+        display: inline;
+    }
+
+    .rule__img {
+        position: absolute;
+        color: #181818;
+        fill: #181818;
+        width: 25px;
+        height: 25px;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    .rule__img--mini {
+        position: absolute;
+        color: #181818;
+        fill: #181818;
+        width: 15px;
+        height: 15px;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+</style>
+<body>
+<div class="container">
+    <div class="card--front">
+        <header class="card__header">
+            <div class="faction">
+                <img class="faction__img" src="../images/factions-death-nighthaunt.svg">
+                <h1 class="faction__name">Death - Nighthaunt [995pts]</h1>
+            </div>
+        </header>
+        <section class="persons-section">
+            <h2 class="persons-section__title">Leader</h2>
+            <ul class="persons-section__list">
+                <li class="persons-section__item person">
+                    <div class="person__top-content">
+                        <div class="person__left">
+                            
+                                
+                                    <img class="person__img" src="../images/factions-death-nighthaunt.svg"
+                                         style="left: 0px">
+                                
+                            
+                                
+                                    <img class="person__img" src="../images/fighters-destroyer.svg"
+                                         style="left: 30px">
+                                
+                            
+                                
+                                    <img class="person__img" src="../images/fighters-fly.svg"
+                                         style="left: 60px">
+                                
+                            
+                                
+                                    <img class="person__img" src="../images/fighters-leader.svg"
+                                         style="left: 90px">
+                                
+                            
+                                
+                            
+                                
+                            
+                            <h3 class="person__name">
+                                Tomb Banshee
+                                
+                            </h3>
+                        </div>
+                        <span class="person__pts">175pts</span>
+                    </div>
+                </li>
+            </ul>
+        </section>
+        
+        
+            <section class="persons-section">
+                <h2 class="persons-section__title">Fighters</h2>
+                <ul class="persons-section__list">
+                    
+                        <li class="persons-section__item person">
+                            <div class="person__top-content">
+                                <div class="person__left">
+                                    
+                                        
+                                    
+                                        
+                                            <img class="person__img" src="../images/factions-death-nighthaunt.svg"
+                                                 style="left: 30px">
+                                        
+                                    
+                                        
+                                            <img class="person__img" src="../images/fighters-fly.svg"
+                                                 style="left: 60px">
+                                        
+                                    
+                                        
+                                            <img class="person__img" src="../images/fighters-minion.svg"
+                                                 style="left: 90px">
+                                        
+                                    
+                                    <h3 class="person__name">
+                                        Chainrasp
+                                        
+                                    </h3>
+                                </div>
+                                <span class="person__pts">85pts</span>
+                            </div>
+                        </li>
+                    
+                        <li class="persons-section__item person">
+                            <div class="person__top-content">
+                                <div class="person__left">
+                                    
+                                        
+                                    
+                                        
+                                            <img class="person__img" src="../images/factions-death-nighthaunt.svg"
+                                                 style="left: 30px">
+                                        
+                                    
+                                        
+                                            <img class="person__img" src="../images/fighters-fly.svg"
+                                                 style="left: 60px">
+                                        
+                                    
+                                        
+                                            <img class="person__img" src="../images/fighters-terrifying.svg"
+                                                 style="left: 90px">
+                                        
+                                    
+                                    <h3 class="person__name">
+                                        Dreadscythe Harridan
+                                         x3
+                                    </h3>
+                                </div>
+                                <span class="person__pts">105pts</span>
+                            </div>
+                        </li>
+                    
+                        <li class="persons-section__item person">
+                            <div class="person__top-content">
+                                <div class="person__left">
+                                    
+                                        
+                                    
+                                        
+                                            <img class="person__img" src="../images/factions-death-nighthaunt.svg"
+                                                 style="left: 30px">
+                                        
+                                    
+                                        
+                                            <img class="person__img" src="../images/fighters-fly.svg"
+                                                 style="left: 60px">
+                                        
+                                    
+                                    <h3 class="person__name">
+                                        Glaivewraith Stalker
+                                         x2
+                                    </h3>
+                                </div>
+                                <span class="person__pts">90pts</span>
+                            </div>
+                        </li>
+                    
+                        <li class="persons-section__item person">
+                            <div class="person__top-content">
+                                <div class="person__left">
+                                    
+                                        
+                                    
+                                        
+                                            <img class="person__img" src="../images/factions-death-nighthaunt.svg"
+                                                 style="left: 30px">
+                                        
+                                    
+                                        
+                                            <img class="person__img" src="../images/fighters-fly.svg"
+                                                 style="left: 60px">
+                                        
+                                    
+                                    <h3 class="person__name">
+                                        Myrmourn Banshee
+                                         x2
+                                    </h3>
+                                </div>
+                                <span class="person__pts">120pts</span>
+                            </div>
+                        </li>
+                    
+                </ul>
+            </section>
+        
+    </div>
+    
+        <div class="card--back">
+            <header class="card__header--mini">
+                <div class="faction">
+                    <img class="faction__img--mini" src="../images/factions-death-nighthaunt.svg">
+                    <h1 class="faction__name--mini">Death - Nighthaunt [995pts]</h1>
+                </div>
+            </header>
+            <div class="rules">
+                <ul class="rules__list">
+                    
+                        <li
+                        
+                            class="rules__item rule"
+                            style="padding-left: 90px"
+                                
+                        >
+                            
+                                
+                                    <img
+                                            class="rule__img"
+                                            src="../images/factions-death-nighthaunt.svg"
+                                            style="left: 0px"
+                                    >
+                                
+                            
+                            <div class="rule__content">
+                                <h3 class="rule__name" style="font-size: 10px">
+                                    [Reaction] Flickering Form :
+                                </h3>
+                                <p class="rule__text" style="font-size: 10px">
+                                    fighter can make this reaction when an enemy fighter finishes a move action within 3&#34; of them.  Note the distance between this fighter and the enemy fighter that made the move action.  Remove this fighter from the battlefield and then set this fighter up on a platform or the battlefield floor no further from the enemy fighter that made the move action.
+                                </p>
+                            </div>
+                        </li>
+                    
+                        <li
+                        
+                            class="rules__item rule"
+                            style="padding-left: 90px"
+                                
+                        >
+                            
+                                
+                                    <img
+                                            class="rule__img"
+                                            src="../images/factions-death-nighthaunt.svg"
+                                            style="left: 0px"
+                                    >
+                                
+                            
+                            <div class="rule__content">
+                                <h3 class="rule__name" style="font-size: 10px">
+                                    ⚁ [Double] Aura of Dread :
+                                </h3>
+                                <p class="rule__text" style="font-size: 10px">
+                                    Pick a visible enemy fighter within a number of inches of this fighter equal to the value of this ability. Until the end of the battle round, subtract 1 from the Strength characteristic (to a minimum of 1) of attack actions made by that fighter. A fighter can only be targeted once per battle round by this ability.
+                                </p>
+                            </div>
+                        </li>
+                    
+                        <li
+                        
+                            class="rules__item rule"
+                            style="padding-left: 90px"
+                                
+                        >
+                            
+                                
+                                    <img
+                                            class="rule__img"
+                                            src="../images/fighters-minion.svg"
+                                            style="left: 0px"
+                                    >
+                                
+                            
+                                
+                                    <img
+                                            class="rule__img"
+                                            src="../images/factions-death-nighthaunt.svg"
+                                            style="left: 30px"
+                                    >
+                                
+                            
+                            <div class="rule__content">
+                                <h3 class="rule__name" style="font-size: 10px">
+                                    ⚁ [Double] Chilling Horde :
+                                </h3>
+                                <p class="rule__text" style="font-size: 10px">
+                                    A fighter can use this ability only if there is a visible friendly fighter with the Minion runemark within 3” of them. Until the end of this fighter&#39;s activation, add 1 to the Attacks and Strength characteristics of attack actions made by this fighter.
+                                </p>
+                            </div>
+                        </li>
+                    
+                        <li
+                        
+                            class="rules__item rule"
+                            style="padding-left: 90px"
+                                
+                        >
+                            
+                                
+                                    <img
+                                            class="rule__img"
+                                            src="../images/fighters-destroyer.svg"
+                                            style="left: 0px"
+                                    >
+                                
+                            
+                                
+                                    <img
+                                            class="rule__img"
+                                            src="../images/factions-death-nighthaunt.svg"
+                                            style="left: 30px"
+                                    >
+                                
+                            
+                            <div class="rule__content">
+                                <h3 class="rule__name" style="font-size: 10px">
+                                    ⚂ [Triple] Frightful Touch :
+                                </h3>
+                                <p class="rule__text" style="font-size: 10px">
+                                    Until the end of this fighter’s activation, count each hit from melee attack actions made by them as a critical hit instead.
+                                </p>
+                            </div>
+                        </li>
+                    
+                        <li
+                        
+                            class="rules__item rule"
+                            style="padding-left: 90px"
+                                
+                        >
+                            
+                                
+                                    <img
+                                            class="rule__img"
+                                            src="../images/fighters-terrifying.svg"
+                                            style="left: 0px"
+                                    >
+                                
+                            
+                                
+                                    <img
+                                            class="rule__img"
+                                            src="../images/factions-death-nighthaunt.svg"
+                                            style="left: 30px"
+                                    >
+                                
+                            
+                            <div class="rule__content">
+                                <h3 class="rule__name" style="font-size: 10px">
+                                    ⚂ [Triple] Harrowing Shriek :
+                                </h3>
+                                <p class="rule__text" style="font-size: 10px">
+                                    Pick an enemy fighter within a number of inches of this fighter equal to the value of this ability and roll a dice. On a roll of 3+, until the end of the battle round, that fighter cannot make move actions or disengage actions.
+                                </p>
+                            </div>
+                        </li>
+                    
+                        <li
+                        
+                            class="rules__item rule"
+                            style="padding-left: 90px"
+                                
+                        >
+                            
+                                
+                                    <img
+                                            class="rule__img"
+                                            src="../images/fighters-leader.svg"
+                                            style="left: 0px"
+                                    >
+                                
+                            
+                                
+                                    <img
+                                            class="rule__img"
+                                            src="../images/factions-death-nighthaunt.svg"
+                                            style="left: 30px"
+                                    >
+                                
+                            
+                            <div class="rule__content">
+                                <h3 class="rule__name" style="font-size: 10px">
+                                    ⚂ [Triple] Spectral Summon :
+                                </h3>
+                                <p class="rule__text" style="font-size: 10px">
+                                    Pick a friendly fighter that has been taken down. Set that fighter up on a platform or the battlefield floor wholly within 3&#34; of this fighter. The fighter set up on the battlefield no longer counts as being taken down. Remove a number of damage points allocated to that fighter equal to the value of this ability.
+                                </p>
+                            </div>
+                        </li>
+                    
+                </ul>
+            </div>
+        </div>
+    
+
+</body>
+</html>

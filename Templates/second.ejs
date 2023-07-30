@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <!--    <link href="http://fonts.cdnfonts.com/css/whitestone" rel="stylesheet">-->
+    <title>Document</title>
+  </head>
+  <style>
+    @font-face {
+      font-family: 'Whitestone';
+      font-style: normal;
+      font-weight: 400;
+      src: local('Whitestone'), url('https://fonts.cdnfonts.com/s/71471/Whitestone.woff') format('woff');
+    }
+
+    @font-face {
+      font-family: 'Whitestone';
+      font-style: italic;
+      font-weight: 400;
+      src: local('Whitestone'), url('https://fonts.cdnfonts.com/s/71471/Whitestone Italic.woff') format('woff');
+    }
+
+    @font-face {
+      font-family: 'Whitestone';
+      font-style: normal;
+      font-weight: 700;
+      src: local('Whitestone'), url('https://fonts.cdnfonts.com/s/71471/Whitestone Bold.woff') format('woff');
+    }
+
+    @font-face {
+      font-family: 'Whitestone';
+      font-style: italic;
+      font-weight: 700;
+      src: local('Whitestone'), url('https://fonts.cdnfonts.com/s/71471/Whitestone Bold Italic.woff') format('woff');
+    }
+
+    @import url('https://fonts.cdnfonts.com/css/josefin-sans?styles=19769,19764');
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    ul {
+      list-style: none;
+    }
+
+    .container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .sheet {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-auto-rows: 150px;
+      grid-gap: 20px;
+      padding: 15px;
+      height: 29.7cm;
+      width: 21cm;
+      border: 1px solid #000;
+      font-family: 'Whitestone', sans-serif;
+      font-size: 12px;
+      color: white;
+    }
+
+    .hero_card {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr;
+      grid-template-rows: 1fr;
+      padding: 10px 5px;
+      background-image: url('../images/bg-second-page.jpg');
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
+
+    .hero_card__name {
+      grid-column: span 2;
+
+      font-size: 18px;
+      margin-bottom: 10px;
+    }
+
+    .hero_card__left_side {
+      display: grid;
+      grid-template-columns: 1fr min-content;
+      grid-template-rows: min-content 1fr;
+    }
+
+    .hero_card__right_side {
+      padding: 0px 5px;
+    }
+
+    .weapon {
+      grid-column-start: 1;
+      grid-column-end: 2;
+      grid-row-start: 2;
+      grid-row-end: 3;
+
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      grid-template-rows: 1fr;
+      background-image: url('../images/background-card-img.jpg');
+      color: #201f1f;
+      background-size: cover;
+      background-repeat: no-repeat;
+      border: 1px solid #201f1f;
+      border-radius: 3px;
+      margin-right: 5px;
+      height: 55px;
+    }
+
+    .weapon_stat {
+      display: flex;
+      padding-top: 35px;
+      justify-content: center;
+      background-position: top center;
+      background-repeat: no-repeat;
+      background-size: 30px 30px;
+    }
+
+    .weapon_stat--type {
+      background-size: cover;
+    }
+
+    .weapon_stat:not(:last-child) {
+      border-right: 1px solid #201f1f;
+    }
+
+    .weapon_stat__value {
+      font-size: 14px;
+    }
+
+    .stats {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: 1fr;
+      background-image: url('../images/background-card-img.jpg');
+      color: #201f1f;
+      background-size: cover;
+      background-repeat: no-repeat;
+      border: 1px solid #201f1f;
+      border-radius: 3px;
+      margin-right: 5px;
+      height: 30px;
+    }
+
+    .hero_stat {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-position: center left 4px;
+      background-repeat: no-repeat;
+      background-size: 20px 20px;
+      padding-left: 20px;
+    }
+
+    .hero_stat:not(:last-child) {
+      border-right: 1px solid #201f1f;
+    }
+
+    .hero_stat__value {
+      font-size: 15px;
+    }
+
+    .abilities {
+      grid-column-start: 2;
+      grid-column-end: 3;
+      grid-row-start: 2;
+      grid-row-end: 3;
+
+      display: flex;
+      flex-direction: column;
+    }
+
+    .abilities__item {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 25px;
+      width: 25px;
+      border-radius: 50%;
+      border: 1px solid #201f1f;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-image: url('../images/background-card-img.jpg');
+    }
+
+    .abilities__img {
+      height: 22px;
+      width: 22px;
+    }
+
+    .hero {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+    }
+
+    .hero__img {
+      border-radius: 50%;
+      width: 100px;
+      height: 100px;
+      border: 3px solid #d6d6d6e9;
+    }
+
+    .herro__class {
+      position: absolute;
+      top: 5px;
+      left: 5px;
+    }
+
+    .hero_class {
+      padding: 3px;
+      background-color: #053d24;
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      border: 3px solid #d6d6d6e9;
+    }
+
+    .hero_class__img {
+      filter: invert(1);
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+      height: 100%;
+      width: 100%;
+    }
+
+    .hero__points {
+      position: absolute;
+      top: 5px;
+      right: 5px;
+    }
+
+    .hero_points {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 3px;
+      background-color: #053d24;
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      border: 3px solid #d6d6d6e9;
+    }
+
+    .hero_points__pts {
+      font-size: 16px;
+    }
+
+  </style>
+  <body>
+    <% const heroes = [...data.commonHeroes, ...data.champions]; heroes.push(data.leader); %>
+
+    <div class="container">
+      <div class="sheet">
+        <% heroes.forEach(function(hero){ %>
+        <div class="hero_card">
+          <div class="hero_card__left_side">
+            <h1 class="hero_card__name"><%= hero.name %></h1>
+            <div class="hero_card__weapon weapon">
+              <% for(const weaponStat in hero.weapon){ %> <% if(weaponStat === 'type') { %>
+              <div
+                class="weapon__item weapon_stat weapon_stat--type"
+                style="background-image: url('../images/<%= hero.weapon[weaponStat].img %>')"
+              ></div>
+              <% } else { %>
+              <div
+                class="weapon__item weapon_stat"
+                style="background-image: url('../images/<%= hero.weapon[weaponStat].img %>')"
+              >
+                <span class="weapon_stat__value"><%= hero.weapon[weaponStat].value %></span>
+              </div>
+              <% } %> <% } %>
+            </div>
+            <div class="abilities">
+              <% hero.imgs.forEach(function(abilityImg, idx){ %> <% if(abilityImg && idx !== 0) { %>
+              <div class="abilities__item">
+                <img class="abilities__img" src="../images/<%= abilityImg %>" alt="" />
+              </div>
+              <% } %> <% }) %>
+            </div>
+          </div>
+          <div class="hero_card__right_side">
+            <div class="hero">
+              <img class="hero__img" src="../images/<%= hero.avatar %>" alt="" />
+              <div class="hero__stats stats">
+                <% for(const heroStats in hero.stats){ %>
+                <div
+                  class="stats__item hero_stat"
+                  style="background-image: url('../images/<%= hero.stats[heroStats].img %>')"
+                >
+                  <span class="hero_stat__value"><%= hero.stats[heroStats].value %></span>
+                </div>
+                <% } %>
+              </div>
+              <div class="herro__class hero_class">
+                <div class="hero_class__img" style="background-image: url('../images/<%= hero.imgs[0] %>')"></div>
+              </div>
+              <div class="hero__points hero_points">
+                <span class="hero_points__pts"><%= hero.pts.replace(/\D/g, '') %></span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <% }) %>
+      </div>
+    </div>
+  </body>
+</html>

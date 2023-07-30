@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <!--    <link href="http://fonts.cdnfonts.com/css/whitestone" rel="stylesheet">-->
+    <title>Document</title>
+  </head>
+  <style>
+    @font-face {
+      font-family: 'Whitestone';
+      font-style: normal;
+      font-weight: 400;
+      src: local('Whitestone'), url('https://fonts.cdnfonts.com/s/71471/Whitestone.woff') format('woff');
+    }
+
+    @font-face {
+      font-family: 'Whitestone';
+      font-style: italic;
+      font-weight: 400;
+      src: local('Whitestone'), url('https://fonts.cdnfonts.com/s/71471/Whitestone Italic.woff') format('woff');
+    }
+
+    @font-face {
+      font-family: 'Whitestone';
+      font-style: normal;
+      font-weight: 700;
+      src: local('Whitestone'), url('https://fonts.cdnfonts.com/s/71471/Whitestone Bold.woff') format('woff');
+    }
+
+    @font-face {
+      font-family: 'Whitestone';
+      font-style: italic;
+      font-weight: 700;
+      src: local('Whitestone'), url('https://fonts.cdnfonts.com/s/71471/Whitestone Bold Italic.woff') format('woff');
+    }
+
+    @import url('https://fonts.cdnfonts.com/css/josefin-sans?styles=19769,19764');
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    ul {
+      list-style: none;
+    }
+
+    .container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .sheet {
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+      grid-gap: 20px;
+      padding: 15px;
+      height: 29.7cm;
+      width: 21cm;
+      border: 1px solid #000;
+      font-family: 'Whitestone', sans-serif;
+      font-size: 12px;
+      color: black;
+    }
+
+    .hero_card {
+      width: 100%;
+      height: 150px;
+      background-size: cover;
+      margin-bottom: 15px;
+    }
+
+    .cards_group_container {
+      display: flex;
+      flex-direction: column;
+      width: 50%;
+    }
+
+    .cards_group_container:not(:last-child) {
+      margin-bottom: 30px;
+    }
+
+    .cards_group_container__cards_counts {
+      display: flex;
+      justify-content: space-evenly;
+      margin: 0;
+      padding: 0;
+      border-left: 1px solid #000;
+      border-right: 1px solid #000;
+    }
+
+    .cards_group_container__cards_count {
+      display: flex;
+      justify-content: center;
+      height: 60px;
+      width: 100%;
+    }
+
+    .cards_group_container__cards_count:not(:last-child) {
+      border-right: 1px solid #000;
+    }
+
+    .cards_group_container__cards_count > span {
+      margin-top: auto;
+      margin-bottom: 10px;
+    }
+  </style>
+  <body>
+    
+
+    <div class="container">
+      <div class="sheet">
+         
+         
+         
+        
+        <div class="cards_group_container">
+          
+          <div class="hero_card" style="background-image: url('../images/heroes-cards/Spirit Host.jpg')"></div>
+          
+          <div type="I" class="cards_group_container__cards_counts">
+            <div class="cards_group_container__cards_count">
+              <span>I</span>
+            </div>
+            <div class="cards_group_container__cards_count">
+              <span>II</span>
+            </div>
+          </div>
+        </div>
+         
+        
+        
+        <div class="cards_group_container">
+          
+          <div class="hero_card" style="background-image: url('../images/heroes-cards/Dreadscythe Harridan.jpg')"></div>
+          
+          <div type="I" class="cards_group_container__cards_counts">
+            <div class="cards_group_container__cards_count">
+              <span>I</span>
+            </div>
+            <div class="cards_group_container__cards_count">
+              <span>II</span>
+            </div>
+            <div class="cards_group_container__cards_count">
+              <span>III</span>
+            </div>
+          </div>
+        </div>
+        
+        
+        
+        
+        
+        
+        
+      </div>
+    </div>
+  </body>
+</html>

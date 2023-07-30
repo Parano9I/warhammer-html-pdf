@@ -551,4 +551,24 @@ module.exports = [
     value: 'Warrior Chamber',
     fileName: 'factions-order-stormcast-eternals-warrior.svg'
   },
+  {
+    value: 'dagger',
+    fileName: 'dagger.png'
+  },
+  {
+    value: 'Slasher Crone',
+    fileName: 'Slasher Crone.jpg'
+  },
+  {
+    value: 'range',
+    fileName: 'range.png'
+  },
+  {
+    value: 'move',
+    fileName: 'move.png'
+  },
+  {
+    value: 'toughness',
+    fileName: 'toughness.png'
+  },
 ];
